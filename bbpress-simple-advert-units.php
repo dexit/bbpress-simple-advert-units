@@ -240,27 +240,6 @@ function bbp_simpleadvertunits_page(){
                     ";
  
 //$optionsform.="<a href ='http://support.google.com/adsense/bin/answer.py?hl=en&answer=48182'>adsense rules</a>";
-
-$optionsform.='<hr>
-              <b>For more info</b>: <a href="http://www.blogercise.com/bbpress-simple-advert-units/">Homepage</a>,  follow our <a href="http://www.blogercise.com/feed/">RSS feed</a> or <a href="https://twitter.com/jezza101">Twitter</a> for updates. <a href="http://wordpress.org/support/plugin/bbpress-simple-advert-units">WP Forum</a>
-              <h2>Support the Plugin</h2>
-              <p>
-              Have you found this plugin useful?
-              <p>
-              I hope so!  
-              <p>
-              If you continue to use it and it helps you to make a
-              tonne of cash then why not say "thanks" by <strong>donating two pounds</strong> via PayPal:   <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                                                                                    <input type="hidden" name="cmd" value="_s-xclick">
-                                                                                    <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-                                                                                    ">
-                                                                                    <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal � The safer, easier way to pay online.">
-                                                                                    <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-                                                                                    </form>
-
-
-              <i>Donating through PayPal is fast and secure, your continued support keeps this plugin free for all!</i>
-              <p> ';
               
  }
 
@@ -375,7 +354,7 @@ add_action ('bbp_template_after_replies_loop', 'bbp_sau_filter_topic_footer',60)
 function bbp_sau_filter_forum_header() {
       $location ='adunit_forum_header';
       if(sau_is_hidden($location)){return;};
-      echo sau_display_ad ($location) ;
+      echo sau_display_ad_topic ($location) ;
 
 }
 
@@ -477,6 +456,22 @@ function sau_display_ad ($location){
 
     $output = do_shortcode($output);
     return $output;   
+}
+
+function sau_display_ad_topic ($location){
+  global $bbp_sau_opt_vals;
+
+  $output='';
+  
+    $ad = $bbp_sau_opt_vals['positions'][$location]['ad_code'];
+ $arr = explode(',',$ad);
+shuffle($arr);
+    if (strlen($ad)>=1){
+      $output = "<div style='text-align:center;padding-top:20px;margin-top: -20px;width:100%;'><!-- SAU_START_$location -->". stripslashes($arr[0]) ."<!-- SAU_END_$location --></div>";
+    }
+
+  $output = do_shortcode($output);
+  return $output;   
 }
 
 
