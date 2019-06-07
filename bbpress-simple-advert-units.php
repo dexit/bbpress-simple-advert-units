@@ -109,8 +109,6 @@ function bbp_simpleadvertunits_page(){
 
           $bbp_sau_opt_vals['positions'][$sau_id]['ad_code']                = ($_POST['ad_code']);
           $ad_code                                                          = ($_POST['ad_code']);  //so it shows after entry
-
-
           //SAVE THE OPTIONS
           krsort($bbp_sau_opt_vals);
 
@@ -296,8 +294,9 @@ function bbp_sau_filter_betweenposts( $content, $reply_id ) {
   //      }
 
         $ad = $bbp_sau_opt_vals['positions'][$location]['ad_code'];
-		$explode_ad = shuffle(explode(',', $ad));
-        if (strlen($explode_ad)>=1)
+	 $arr = explode(',',$ad);
+	shuffle($arr);
+        if (strlen($ad)>1)
         {
         //MANIPULATE POST OUTPUT
 	$content=$content.'</div></div>  <!-- .bbp-reply -->
@@ -307,7 +306,7 @@ function bbp_sau_filter_betweenposts( $content, $reply_id ) {
                        	     </div><!-- .bbp-meta -->
                             </div><!-- .bbp-reply-header -->
                             <div style="text-align:center;padding-top:20px">
-                            <!-- .bbp-adunit -->'.stripslashes($explode_ad).'<!-- .bbp-adunit-end -->
+                            <!-- .bbp-adunit -->'.stripslashes($arr[0]).'<!-- .bbp-adunit-end -->
                             <p>
                          </div>
                         <div><div>';
@@ -346,11 +345,10 @@ function bbp_sau_filter_topic_inpost($content) {
 
       $ad = sau_display_ad ($location);
 
-      $output   =''; 
-
+      $output   ='';      
       if (strlen($ad)>1){
           $output .=  '<div style="float:right;padding:10px;margin:0px 0px 5px 5px;border-style:solid;border-width:thin;">';
-          $output .=  $ad;
+          $output .=  $ad ;
           $output .= "</div>";
       }
 
@@ -361,7 +359,7 @@ add_filter('bbp_get_reply_content', 'bbp_sau_filter_topic_inpost', 101, 2);
 
 // adunit_topic_footer ---------------------------------------------
 
-// DOES NOT SHOW DATA
+
 function bbp_sau_filter_topic_footer() {
       $location ='adunit_topic_footer';
       if(sau_is_hidden($location)){return;};
@@ -377,7 +375,7 @@ add_action ('bbp_template_after_replies_loop', 'bbp_sau_filter_topic_footer',60)
 function bbp_sau_filter_forum_header() {
       $location ='adunit_forum_header';
       if(sau_is_hidden($location)){return;};
-     echo sau_display_ad ($location) ;
+      echo sau_display_ad ($location) ;
 
 }
 
@@ -471,9 +469,10 @@ function sau_display_ad ($location){
     $output='';
     
       $ad = $bbp_sau_opt_vals['positions'][$location]['ad_code'];
-	      $explode_ad = shuffle(explode(',', $ad));
-      if (strlen($explode_ad)>=1){
-        $output = "<!-- SAU_START_$location -->".stripslashes($explode_ad)."<!-- SAU_END_$location -->";
+	 $arr = explode(',',$ad);
+	shuffle($arr);
+      if (strlen($ad)>=1){
+        $output = "<div style='text-align:center;padding-top:20px'><!-- SAU_START_$location -->". stripslashes($arr[0]) ."<!-- SAU_END_$location --></div>";
       }
 
     $output = do_shortcode($output);
