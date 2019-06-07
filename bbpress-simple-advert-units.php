@@ -108,9 +108,8 @@ function bbp_simpleadvertunits_page(){
                {$bbp_sau_opt_vals['positions'][$sau_id]['hide_from_users']=FALSE;}
 
           $bbp_sau_opt_vals['positions'][$sau_id]['ad_code']                = ($_POST['ad_code']);
-          $ad_code1                                                          = ($_POST['ad_code']);  //so it shows after entry
-          $explode_ad_code1 = shuffle(explode(',', $$ad_code1));
-          $ad_code                                                         = $explode_ad_code1[0];
+          $ad_code                                                          = ($_POST['ad_code']);  //so it shows after entry
+
 
           //SAVE THE OPTIONS
           krsort($bbp_sau_opt_vals);
@@ -347,7 +346,9 @@ function bbp_sau_filter_topic_inpost($content) {
 
       $ad = sau_display_ad ($location);
 
-      $output   ='';      
+      $output   =''; 
+      $explode_ad = shuffle(explode(',', $ad));
+      $ad                                                        = $explode_ad[0];     
       if (strlen($ad)>1){
           $output .=  '<div style="float:right;padding:10px;margin:0px 0px 5px 5px;border-style:solid;border-width:thin;">';
           $output .=  $ad ;
