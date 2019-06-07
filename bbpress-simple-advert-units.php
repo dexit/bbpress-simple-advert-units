@@ -108,7 +108,10 @@ function bbp_simpleadvertunits_page(){
                {$bbp_sau_opt_vals['positions'][$sau_id]['hide_from_users']=FALSE;}
 
           $bbp_sau_opt_vals['positions'][$sau_id]['ad_code']                = ($_POST['ad_code']);
-          $ad_code                                                          = ($_POST['ad_code']);  //so it shows after entry
+          $ad_code1                                                          = ($_POST['ad_code']);  //so it shows after entry
+          $explode_ad_code1 = shuffle(explode(',', $$ad_code1));
+          $ad_code                                                         = $explode_ad_code1[0];
+
           //SAVE THE OPTIONS
           krsort($bbp_sau_opt_vals);
 
