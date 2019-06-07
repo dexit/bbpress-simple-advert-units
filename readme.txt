@@ -1,9 +1,10 @@
+=== MOD WITH SHUFFLE
 === Plugin Name ===
-Contributors: jezza101
+Contributors: jezza101, dExIT
 Donate link: http://www.blogercise.com
 Tags: adsense, adverts, ad units, bbpress, forum, adsense, advertise, advertising, google, google adsense, make money, monetize, self serve banners
 Requires at least: 4.0
-Tested up to: 4.7.2
+Tested up to: 5.2
 Stable tag: 0.41
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
